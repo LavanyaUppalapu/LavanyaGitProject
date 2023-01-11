@@ -1,0 +1,9 @@
+:host {    --padding-value:1rem;
+}
+
+
+.search{
+    padding:var(--padding-value);
+    border:1px solid rgb(86, 213, 229);
+    margin: 1rem;
+}
