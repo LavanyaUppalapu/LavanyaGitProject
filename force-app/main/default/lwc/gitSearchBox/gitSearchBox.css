@@ -4,6 +4,7 @@
 
 .search{
     padding:var(--padding-value);
+    background-color: rgb(246, 47, 21);
     border:1px solid rgb(86, 213, 229);
     margin: 1rem;
 }

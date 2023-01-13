@@ -1,0 +1,30 @@
+<template>
+
+<lightning-card title="Display Related contacts under account using Accoridan ">
+<lightning-accordion allow-multiple-sections-open={multiple}>
+  <template if:true={Contacts}>
+      <template for:each={Contacts} for:item="acc">
+          <lightning-accordion-section name={acc.Name} label={acc.Name} key={acc.Id}>
+              <template for:each={acc.Cases} for:item="con">
+                  <lightning-accordion-section name={con.Subject} label={con.Subject} key={con.Id}>
+                  </lightning-accordion-section>
+              </template>
+          </lightning-accordion-section>
+      </template>
+  </template>
+</lightning-accordion></lightning-card>
+
+<lightning-card title="Display Related opportunities under account using Accoridan ">
+<lightning-accordion allow-multiple-sections-open={multiple}>
+    <template if:true={opportunities}>
+        <template for:each={opportunities} for:item="acc">
+            <lightning-accordion-section name={acc.Name} label={acc.Name} key={acc.Id}>
+                <template for:each={acc.OpportunityLineItems} for:item="con">
+                    <lightning-accordion-section name={con.Name} label={con.Name} key={con.Id}>
+                    </lightning-accordion-section>
+                </template>
+            </lightning-accordion-section>
+        </template>
+    </template>
+  </lightning-accordion></lightning-card>
+</template>

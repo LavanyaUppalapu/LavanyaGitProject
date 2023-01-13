@@ -1,0 +1,15 @@
+<aura:component >
+	<lightning:card title="calculator" iconName="standard:account">
+            <aura:set attribute="actions">
+                <lightning:buttonGroup>
+                    <lightning:button label="Add" onclick="{!c.Add}"/>
+                    <lightning:button label="Substract" onclick="{!c.Substract}"/>
+                    <lightning:button label="Multiply" onclick="{!c.Multiply}"/>
+                    <lightning:button label="Divide" onclick="{!c.Divide}"/>
+                </lightning:buttonGroup>
+            </aura:set>
+            <lightning:input label="First Number" aura:id="fnum"/>
+            <lightning:input label="Second Number" aura:id="snum"/>
+            <lightning:input label="Result" aura:id="Result"/>
+    </lightning:card>
+</aura:component>

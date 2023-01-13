@@ -1,0 +1,13 @@
+<aura:component >
+	<aura:registerEvent name="msgEvent" type="c:SelectValComponentEvent"/>
+    <aura:attribute name="selOption" type="String"/>
+    <aura:attribute name="options" type="List" default="[ 
+                                                        {'label':'New', 'value': 'new'},
+                                                        {'label':'Inprogress', 'value': 'inprogress'},
+                                                        {'label':'Finished', 'value': 'finished'},
+                                                        ]"/>
+    
+    <lightning:Combobox name="progress" label="status" value="{!v.selOption}" placeholder="select progress"
+                         options="{!v.options}" onchange= "{!c.handleChange}"/>
+            
+</aura:component>

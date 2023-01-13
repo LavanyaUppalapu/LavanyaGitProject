@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Notifications">
+        <p class="slds-p-horizontal_small">
+        Click the button for required notification
+        </p>
+        <p slot="footer">
+        <lightning-button onclick={handleAlertClick} label="open Alert Model">
+        </lightning-button> &nbsp;
+        <lightning-button onclick={handleConfirmClick} label="open Confirm Model">
+        </lightning-button> &nbsp;
+        <lightning-button onclick={handlePromptClick} label="open Prompt Model">
+        </lightning-button> &nbsp;
+        <lightning-button onclick={showNotification} label="Shoow Toast Message">
+        </lightning-button>
+        </p>
+        </lightning-card>
+</template>

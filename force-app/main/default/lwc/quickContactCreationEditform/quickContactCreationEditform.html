@@ -1,0 +1,14 @@
+<template>
+    <lightning-quick-action-panel header="Create New Contact">
+     <lightning-record-edit-form object-api-name="Contact" onsuccess={handleSuccess}>
+        <lightning-input-field field-name="Name"></lightning-input-field>
+        <lightning-input-field field-name="Birthdate"></lightning-input-field>
+        <lightning-input-field field-name="Email"></lightning-input-field>
+        <lightning-input-field field-name="AccountId" value={recordId}></lightning-input-field>        
+        <lightning-button class="slds-m-top_small" label="Cancel" onclick={closeQuickAction}></lightning-button>&nbsp;
+        <lightning-button class="slds-m-top_small" type="submit" variant="brand"  label="Save">
+        </lightning-button>
+        </lightning-record-edit-form>
+    </lightning-quick-action-panel>
+        
+</template>

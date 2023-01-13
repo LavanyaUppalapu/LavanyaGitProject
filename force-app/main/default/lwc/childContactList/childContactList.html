@@ -1,0 +1,19 @@
+<template>
+    <lightning-card >
+        <h3 slot="title">
+            <lightning-icon icon-name="standard:account" size="small"></lightning-icon>
+            Contact Creation using Apex 
+        </h3>
+
+         <div slot="footer">
+            <lightning-button label="Submit" onclick={createContactRecord} variant="brand"></lightning-button>
+        
+        </div>
+        <p class="slds-p-horizontal_small">
+        <lightning-input type="text" name="contFirstName" label="First Name" value={contactRecord.FirstName} onchange={handleFirstNameChange}></lightning-input>
+        <lightning-input type="text" name="contLastName" label="Last Name" value={contactRecord.LastName} onchange={handleLastNameChange}></lightning-input>
+        <lightning-input type="text" name="contEmail" label="Email" value={contactRecord.Email} onchange={handleEmailChange}></lightning-input>
+            
+        </p>
+    </lightning-card>
+</template>

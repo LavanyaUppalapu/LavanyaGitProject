@@ -1,0 +1,8 @@
+<aura:component >
+	<aura:attribute name="selectedOptionValue" type="String"/>
+    <c:ComboBoxComponent msgEvent="{!c.showSelectedValue}"/>
+    <br/>
+    <div>
+        <b>Selected Value-->{!v.selectedOptionValue}</b>
+    </div>
+</aura:component>

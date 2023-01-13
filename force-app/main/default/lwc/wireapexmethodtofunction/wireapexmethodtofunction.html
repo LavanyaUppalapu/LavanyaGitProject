@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Wire a method to a function">
+        <p class="slds-p-horizontal_small">
+         <template for:each={contacts} for:index="index" for:item="contactObj">
+            <p key={contactObj.key}> 
+                {contactObj.value}
+            </p>
+         </template>
+        </p>
+    </lightning-card>
+</template>
