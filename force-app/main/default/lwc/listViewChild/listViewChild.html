@@ -1,0 +1,15 @@
+<template>
+    the user should go here
+<template if:true ={retrievedUser}>
+    <div class="slds-var-p-around_medium lgc-bg">
+        <lightning-tile label={retrievedUser.login} href={retrievedUser.html_url} type="media">
+            <lightning-avatar slot="media" src={retrievedUser.avatar_url} fallback-icon-name="standard:person_account" 
+            alternative-text={retrievedUser.login}></lightning-avatar>
+            <ul class="slds-list_horizontal slds-has-dividers_right">
+                <li class="slds-item">{retrievedUser.type},{retrievedUser.score}</li>
+                <li class="slds-item">{retrievedUser.node_id}</li>
+            </ul>
+        </lightning-tile>
+    </div> 
+</template>
+</template>

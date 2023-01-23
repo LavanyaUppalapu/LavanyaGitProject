@@ -1,5 +1,20 @@
 <template>
-<lightning-card title="Display Git Users List">
-       <div>This is used to display the searched users list in github.</div> 
-</lightning-card>   
+   <lightning-card  title="UserList">
+
+              
+     <template if:true={retrievedUsers}>
+       <template for:each={retrievedUsers} for:item="retrievedUser">
+        <div key={retrievedUser.id}>
+              <c-list-view-child retrieved-user = "{retrievedUser}"></c-list-view-child>    
+        </div>
+
+         <!--li key={retrievedUser.id}>
+              {retrievedUser.login}
+              <img src={retrievedUser.avatar_url} alt={retrievedUser.login} width="100" height="100">
+         </li-->
+       </template>
+       </template>
+   </lightning-card>       
+              
+       <!--strong>Name of the person>  {personName}</strong-->  
 </template>

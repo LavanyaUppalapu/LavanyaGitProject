@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This channel is for passing the messaging data from git search to the actual search component</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Thisistocheckifthetermisvalid</description>
+        <fieldName>isTermValid</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Thiswouldthetermtobesearched</description>
+        <fieldName>SearchTerm</fieldName>
+    </lightningMessageFields>
+    <masterLabel>messaging channel for git search parameter</masterLabel>
+</LightningMessageChannel>
