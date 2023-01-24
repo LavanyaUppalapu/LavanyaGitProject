@@ -45,7 +45,7 @@ export default class ListDisplay extends LightningElement {
 
     async handleMessage(message){
         console.log('handleMessage',message);
-        this.personName = message.searchTerm;
+        this.personName = message.SearchTerm;
         let queryEndpoint = QUERY_USER_ENDPOINT_URL+this.personName ;
 
         try{
