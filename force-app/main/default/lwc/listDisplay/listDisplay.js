@@ -2,6 +2,13 @@ import { LightningElement,wire,api,track} from 'lwc';
 // Import message service features required for subscribing and the message channel
 import {subscribe,unsubscribe,APPLICATION_SCOPE,MessageContext} from 'lightning/messageService';
 import SearchMessage from '@salesforce/messageChannel/gitSearchMessagingChannel__c';
+import insertContact from '@salesforce/apex/GitComponentController.insertContact';
+
+
+import insertContact1 from '@salesforce/apex/GitComponentController.insertContact1';
+import { getRecord } from 'lightning/uiRecordApi';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import Account from '@salesforce/schema/Account.Name';
 
 const QUERY_USER_ENDPOINT_URL = 'https://api.github.com/search/users?q=';
 
@@ -9,10 +16,27 @@ export default class ListDisplay extends LightningElement {
 
     @api personName;
 
+    selectedUser = '';
+    selectedUserArray=[];
+
     retrievedUsers = [];
+
+    retrivedUserName='';
+
 
     @api exposeToParentMethod(){
        console.log('called from parent');
+    }
+
+
+    @wire(getRecord, { recordId: '0012w00001HqTIvAAN', fields: 'Account.Name' })
+    wiredRecord({ error, data }) {
+    if(error){
+      console.log(error) ;
+    }else if(data){
+      console.log(data);
+      this.retriveduserName=data.fields.Name.value;
+    }
     }
 
 
@@ -67,4 +91,46 @@ export default class ListDisplay extends LightningElement {
         this.subscription = null;
     }
 
-}
+    handleOnUserClicked(event){
+        Console.log(event.detail);
+        this.selectedUser = event.detail;
+        alert(this.selectedUser);
+    }
+
+    get showUser(){
+        return this.selectedUser.length !=0 ? true : false;
+    }
+
+   /* async handleSaveUserClick(){
+        console.log('save user to SF database');
+
+        try{
+            const issuccess=await insertContact({contactName:this.selectedUser});
+            console.log('created creation'+issuccess);
+        }catch(error){
+            console.log(error);
+        }
+        
+    } */
+      
+       
+    async handleSaveUserClick(){
+        console.log('save user in SF');
+
+                try{
+        const issuccess=await insertContact1({accNameList:this.selectedUserArray});
+
+        const evt = new ShowToastEvent({
+            title: 'Records Saved',
+            message: 'Records Saved',
+            variant: 'info',
+        });
+        this.dispatchEvent(evt);
+        
+        console.log('created creation'+issuccess);
+        }catch(error){
+        console.log(error);
+        }
+    }
+}  
+

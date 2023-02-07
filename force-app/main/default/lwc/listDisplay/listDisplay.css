@@ -1,12 +1,10 @@
-:host {  
-    --padding-value:1rem;
-    background-color: rgb(17, 147, 223);
-    border:1px solid rgb(18, 225, 73);
+
+:host {    --padding-value:1rem;
+}
+.search{
+    padding:var(--padding-value);
+   background-color: hsl(127, 90%, 49%);
+    border:1px solid rgb(22, 144, 177);
     margin: 1rem;
-    /*background-image: url('/resource/static_resource_Animation');*/
-
-    background-image: url("paste url here"); 
-
-
-
+    color: rgb(210, 121, 12);
 }
