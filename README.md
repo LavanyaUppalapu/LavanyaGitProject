@@ -22,7 +22,8 @@
 Live Demo on the Scratch Org: https://hosted-scratch.herokuapp.com/launch?template=https://github.com/LavanyaUppalapu/LavanyaGitProject
 
 # Preview
-![image](https://user-images.githubusercontent.com/121805458/212235887-b9f07c96-d5e6-462e-b3b8-86ae6d2d3695.png)
+![image](https://user-images.githubusercontent.com/121805458/217236119-d5a6c207-bb65-4be2-bffa-d7f6cfa2e056.png)
+
 
 
 
